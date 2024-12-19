@@ -1,0 +1,7 @@
+REDIS_CONNECTION=redis-dev
+REDIS_HOST=redis-17782.c292.ap-southeast-1-1.ec2.redns.redis-cloud.com
+REDIS_PORT=17782
+REDIS_PASSWORD=hbRR3MgHX3QvJ5mfkMO4pxVdMNturjXE
+REDIS_PREFIX=vaccine:cart-app:
+
+MONGODB_URI=mongodb://admin:password@localhost:27017/mydatabase?authSource=admin
