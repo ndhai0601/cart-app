@@ -9,6 +9,9 @@ export class Product extends Document {
 
   @Prop()
   price: number;
+
+  @Prop({ unique: true })
+  sku: string;
 }
 
 export const ProductSchema = SchemaFactory.createForClass(Product);

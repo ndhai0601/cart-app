@@ -3,7 +3,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { RedisModule } from '@nestjs-modules/ioredis';
 import { CartService } from './cart.service';
 import { Cart, CartSchema } from './schemas/cart.schema';
-import { Product, ProductSchema } from './schemas/product.schema';
+import { Product, ProductSchema } from '../product/schemas/product.schema';
 import { Promotion, PromotionSchema } from './schemas/promotion.schema';
 import { CartController } from './cart.controller';
 import { PromotionService } from './promotion.service';

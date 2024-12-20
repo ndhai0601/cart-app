@@ -1,14 +1,19 @@
-// cart.controller.ts
 import { Controller, Get, Post, Body, Param, Patch } from '@nestjs/common';
 import { CartService } from './cart.service';
+import { AddItemDto } from './dto/add-item.dto';
 
 @Controller('cart')
 export class CartController {
   constructor(private readonly cartService: CartService) {}
 
   @Post()
-  async addItemToCart(@Body() addItemDto: any) {
+  async addItemToCart(@Body() addItemDto: AddItemDto) {
     return this.cartService.addItemToCart(addItemDto);
+  }
+
+  @Post('create')
+  async createCart() {
+    return this.cartService.createCart();
   }
 
   @Get(':id')
