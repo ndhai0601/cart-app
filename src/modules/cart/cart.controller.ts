@@ -21,11 +21,11 @@ export class CartController {
     return this.cartService.getCart(cartId);
   }
 
-  @Patch(':id/apply-promotion')
-  async applyPromotion(
-    @Param('id') cartId: string,
-    @Body('code') promotionCode: string,
-  ) {
-    return this.cartService.applyPromotion(cartId, promotionCode);
-  }
+  // @Patch(':id/apply-promotion')
+  // async applyPromotion(
+  //   @Param('id') cartId: string,
+  //   @Body('code') promotionCode: string,
+  // ) {
+  //   return this.cartService.applyPromotion(cartId, promotionCode);
+  // }
 }

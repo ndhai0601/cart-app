@@ -7,6 +7,7 @@ import { Product, ProductSchema } from '../product/schemas/product.schema';
 import { Promotion, PromotionSchema } from './schemas/promotion.schema';
 import { CartController } from './cart.controller';
 import { PromotionService } from './promotion.service';
+import { ProductModule } from '../product/product.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { PromotionService } from './promotion.service';
       { name: Product.name, schema: ProductSchema },
       { name: Promotion.name, schema: PromotionSchema },
     ]),
+    ProductModule,
   ],
   controllers: [CartController],
   providers: [CartService, PromotionService],

@@ -9,9 +9,13 @@ import { RedisConfigService } from './config/redis.config';
 import 'dotenv/config';
 import { APP_PIPE } from '@nestjs/core';
 import { ProductModule } from './modules/product/product.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     CartModule,
 
     MongooseModule.forRootAsync({
@@ -19,9 +23,9 @@ import { ProductModule } from './modules/product/product.module';
     }),
 
     ProductModule,
-    // RedisModule.forRootAsync({
-    //   useClass: RedisConfigService,
-    // }),
+    RedisModule.forRootAsync({
+      useClass: RedisConfigService,
+    }),
   ],
   controllers: [AppController],
   providers: [
